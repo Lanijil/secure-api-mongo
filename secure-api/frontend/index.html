@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend API Mongo</title>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form id="register-form">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required />
+        <input type="password" name="password" placeholder="Mot de passe" required />
+        <button type="submit">S'inscrire</button>
+    </form>
+    <a href="/login.html">Déjà inscrit ? Se connecter</a>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = e.target.username.value;
+            const password = e.target.password.value;
+
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+            alert(JSON.stringify(data));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Bienvenue sur le Dashboard</h1>
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Non autorisé, connecte-toi d\'abord.');
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>
