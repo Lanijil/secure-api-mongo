@@ -28,30 +28,36 @@ Il permet de :
    ```
 
 2. **Lancement du serveur API et création du fichier .env** :
-<<<<<<< HEAD
-   A mettre à racine du projet
-=======
->>>>>>> f7049672cf7536e6e40801c4401e56ca83085eb9
+   À placer à la racine du projet :
    ```bash
    MONGO_URI=mongodb://localhost:27017/myappdb
    PORT=5000
    JWT_SECRET=unsecretsecure
    ```
-   A lancer dans le terminal
+   Puis lancer :
    ```bash
    npm install
    npm run dev
    ```
 
-3. **Utilisation via le Frontend** :
-   - `/index.html` → Inscription d’un nouvel utilisateur
-   - `/login.html` → Connexion (JWT reçu)
-   - `/dashboard.html` → Accès protégé avec le token
+## ✅ 4. Utilisation via le Frontend
+Les fichiers front-end (HTML/JS/CSS) sont dans un dossier séparé (`frontend/`). Il suffit d’ouvrir les fichiers dans le navigateur :
+| Fichier | Fonction |
+|---------|----------|
+| `index.html` | Inscription d’un utilisateur (POST `/api/register`) |
+| `login.html` | Connexion et stockage du token JWT (POST `/api/login`) |
+| `dashboard.html` | Dashboard sécurisé (GET `/api/me`) avec vérification du token |
 
-4. **Stockage en base** :
-   - Utilisateurs enregistrés dans **MongoDB (myappdb.users)**
+➡️ Le token est stocké dans le navigateur via `localStorage`, puis utilisé automatiquement pour les requêtes vers les routes protégées.
 
-## ✅ 4. Choix des technologies
+## ✅ 5. Fonctionnalités principales
+- 🔐 Inscription sécurisée (hashage du mot de passe avec bcryptjs)
+- 🔑 Connexion avec retour d’un token JWT
+- 🔒 Accès protégé au tableau de bord via vérification du token (`Authorization: Bearer ...`)
+- 💾 Stockage des utilisateurs dans MongoDB
+- 🧪 Tests API manuels via Postman ou l’interface front-end
+
+## ✅ 6. Choix des technologies
 | Techno | Pourquoi ? |
 |--------|------------|
 | **MongoDB** | Base NoSQL flexible, simple à utiliser pour les projets web |
@@ -62,13 +68,7 @@ Il permet de :
 | **Docker** | Simplifie le déploiement de MongoDB & Mongo Express |
 | **HTML/JS** | Frontend minimaliste, simple à intégrer à Express |
 
-## ✅ 5. Fonctionnalités principales
-- 🔐 Register (hashage des passwords)
-- 🔑 Login (retourne un token JWT)
-- 🛡️ Vérification du token pour accéder au dashboard (front)
-- 💾 Stockage des utilisateurs dans MongoDB
-
-## ✅ 6. Améliorations potentielles
+## ✅ 7. Améliorations potentielles
 - ✅ Système de **refresh token** (sécurité renforcée)
 - ✅ Middleware de **protection des routes API (auth middleware)**
 - ✅ Interface Frontend **plus poussée (React/Vue/Svelte)**
