@@ -1,0 +1,73 @@
+/* Fond général de la page */
+body {
+    background-color: #fdfdfd; 
+    font-family: Arial, sans-serif;
+    color: #0a2342; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Conteneur principal */
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #e0e0e0; 
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* titres */
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* formulaire */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Champs texte */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* boutons */
+  button {
+    background-color: #0a2342; 
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #072c5a; 
+  }
+  
+  /* Pour le message d’erreur ou info */
+  .error-message {
+    color: #d93025; 
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Pour le texte dans le tableau de bprd */
+  #userInfo {
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
