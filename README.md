@@ -27,14 +27,14 @@ Il permet de :
    docker compose up -d
    ```
 
-2. **Lancement du serveur API** :
-   Création du fichier .env avec :
+2. **Lancement du serveur API et création du fichier .env** :
+   A mettre à racine du projet
    ```bash
    MONGO_URI=mongodb://localhost:27017/myappdb
    PORT=5000
    JWT_SECRET=unsecretsecure
    ```
-
+   A lancer dans le terminal
    ```bash
    npm install
    npm run dev
