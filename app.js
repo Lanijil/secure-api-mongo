@@ -12,6 +12,9 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.use('/api', authRoutes);
 
+const userRoutes = require('./routes/users');
+app.use('/api/users', userRoutes);
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
