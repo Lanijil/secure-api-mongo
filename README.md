@@ -28,6 +28,13 @@ Il permet de :
    ```
 
 2. **Lancement du serveur API** :
+   Création du fichier .env avec :
+   ```bash
+   MONGO_URI=mongodb://localhost:27017/myappdb
+   PORT=5000
+   JWT_SECRET=unsecretsecure
+   ```
+
    ```bash
    npm install
    npm run dev
