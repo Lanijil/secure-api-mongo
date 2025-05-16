@@ -28,7 +28,10 @@ Il permet de :
    ```
 
 2. **Lancement du serveur API et création du fichier .env** :
+<<<<<<< HEAD
    A mettre à racine du projet
+=======
+>>>>>>> f7049672cf7536e6e40801c4401e56ca83085eb9
    ```bash
    MONGO_URI=mongodb://localhost:27017/myappdb
    PORT=5000
