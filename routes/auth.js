@@ -1,6 +1,13 @@
 const express = require('express');
 const { body } = require('express-validator');
-const { register, login } = require('../controllers/authController');
+const {
+  register,
+  login,
+  getMe,
+  updateUsername,
+  deleteUser
+} = require('../controllers/authController');
+const verifyToken = require('../middlewares/verifyToken');
 
 const router = express.Router();
 
@@ -15,5 +22,9 @@ router.post('/login',
     body('password').notEmpty(),
     login
 );
+
+router.get('/me', verifyToken, getMe);
+router.put('/me', verifyToken, updateUsername);
+router.delete('/me', verifyToken, deleteUser);
 
 module.exports = router;
